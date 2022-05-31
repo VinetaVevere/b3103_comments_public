@@ -7,15 +7,15 @@ const comment_template = comment_block.querySelector('.template');
 const background_container = document.querySelector('.background_container');
 const image_template = background_container.querySelector('.template');
 
-xhttp.get('api.php?object=comment&action=getAll', function (response) {
+xhttp.get('https://gratis-gap.000webhostapp.com/api.php?object=comment&action=getAll', function (response) {
     for (let comment of response.comments) {
         addComment(comment.id, comment.author, comment.message);
     }
 });
 
-xhttp.get('api.php?object=image&action=getAll', function (response) {
+xhttp.get('https://gratis-gap.000webhostapp.com/api.php?object=image&action=getAll', function (response) {
     for (let image of response.images) {
-        addBackgroundImage('endpoint.php?name=png&id=' + image.id);
+        addBackgroundImage('https://gratis-gap.000webhostapp.com/endpoint.php?name=png&id=' + image.id);
     }
 });
 
@@ -53,7 +53,7 @@ function addComment(id, author, message) {
         const data = new FormData();
         data.set('id', id);
 
-        xhttp.post('api.php?object=comment&action=delete', data, function (response) {
+        xhttp.post('https://gratis-gap.000webhostapp.com/api.php?object=comment&action=delete', data, function (response) {
             new_comment.remove();
         });
     };
@@ -62,7 +62,7 @@ function addComment(id, author, message) {
         const data = new FormData();
         data.set('id', id);
 
-        xhttp.post('api.php?object=comment&action=get', data, function (response) {
+        xhttp.post('https://gratis-gap.000webhostapp.com/api.php?object=comment&action=get', data, function (response) {
             popup.style.display = 'flex';
             form_update.querySelector('[name="id"]').value = response.comment.id;
             form_update.querySelector('[name="author"]').value = response.comment.author;
