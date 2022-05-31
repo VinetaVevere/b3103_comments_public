@@ -16,7 +16,7 @@
 </div>
 
 <div class="content_container">
-    <form action="https://gratis-gap.000webhostapp.com/api.php?name=add-comment" id="comments_form">
+    <form action="https://gratis-gap.000webhostapp.com/api.php?object=comment&action=add" id="comments_form">
         <input type="text" name="author" placeholder="Name" required>
         <textarea name="message" rows="10" placeholder="Comment Message" required></textarea>
         <button type="submit">comment</button>
@@ -38,7 +38,7 @@
 
 
 <div class="popup">
-    <form action="https://gratis-gap.000webhostapp.com/api.php?name=update-comment" id="comments_update_form">
+    <form action="https://gratis-gap.000webhostapp.com/api.php?object=comment&action=update" id="comments_update_form">
 
         <input type="hidden" name="id">
         <input type="text" name="author" placeholder="Name" required>
